@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Grade Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Grade Item</h1>
+        <form action="" method="post">
+            <label for="test">Item:</label>
+            <select name="test" id="test">
+                <option value="Lab 1" {% if item.test == 'Lab 1' %}selected{% endif %}>Lab 1</option>
+                <option value="Lab 2" {% if item.test == 'Lab 2' %}selected{% endif %}>Lab 2</option>
+                <option value="Lab 3" {% if item.test == 'Lab 3' %}selected{% endif %}>Lab 3</option>
+                <option value="Lab 4" {% if item.test == 'Lab 4' %}selected{% endif %}>Lab 4</option>
+                <option value="Lab 5" {% if item.test == 'Lab 5' %}selected{% endif %}>Lab 5</option>
+                <option value="Lab 6" {% if item.test == 'Lab 6' %}selected{% endif %}>Lab 6</option>
+                <option value="Midterm" {% if item.test == 'Midterm' %}selected{% endif %}>Midterm</option>
+                <option value="Final" {% if item.test == 'Final' %}selected{% endif %}>Final</option>
+                <option value="Project" {% if item.test == 'Project' %}selected{% endif %}>Project</option>
+            </select>
+            <label for="score">Score:</label>
+            <input type="number" name="score" id="score" step="0.01" min="0" max="100" value="{{ item.score }}" required>
+            <button type="submit" class="button-primary">Update</button>
+        </form>
+        <a href="/" class="button-primary" style="background:#e0e6ed;color:#0a2a56;">Back</a>
+    </div>
+</body>
+</html>

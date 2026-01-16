@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Grade Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Products</h1>
+        <form action="/add" method="post" style="margin-bottom:24px;">
+            <button type="submit" class="button-primary" style="float:right;">CREATE NEW</button>
+            <label for="test">Item:</label>
+            <select name="test" id="test">
+                <option value="Lab 1">Lab 1</option>
+                <option value="Lab 2">Lab 2</option>
+                <option value="Lab 3">Lab 3</option>
+                <option value="Lab 4">Lab 4</option>
+                <option value="Lab 5">Lab 5</option>
+                <option value="Lab 6">Lab 6</option>
+                <option value="Midterm">Midterm</option>
+                <option value="Final">Final</option>
+                <option value="Project">Project</option>
+            </select>
+            <label for="score">Score:</label>
+            <input type="number" name="score" id="score" step="0.01" min="0" max="100" required>
+        </form>
+        <table>
+            <tr>
+                <th>Item Name</th>
+                <th>Score</th>
+                <th>Action</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.test }}</td>
+                <td>{{ item.score }}</td>
+                <td class="action-icons">
+                    <a href="/edit/{{ item.id }}" class="icon-btn edit" title="Edit">✏️</a>
+                    <a href="/delete/{{ item.id }}" class="icon-btn delete" title="Delete" onclick="return confirm('Delete this item?');">🗑️</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h2>Calculated Final Grade: {{ final_grade|round(2) }}</h2>
+    </div>
+</body>
+</html>

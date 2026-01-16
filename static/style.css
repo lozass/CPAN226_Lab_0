@@ -1,0 +1,94 @@
+body {
+    background: #0a2a56;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    background: #fff;
+    border-radius: 24px;
+    margin: 40px auto;
+    padding: 32px 24px;
+    max-width: 900px;
+    box-shadow: 0 8px 32px rgba(10,42,86,0.12);
+}
+h1, h2 {
+    color: #0a2a56;
+    margin-bottom: 16px;
+}
+.button-primary {
+    background: linear-gradient(90deg, #2e8bff 0%, #3ec6ff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 32px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(46,139,255,0.15);
+    margin-bottom: 24px;
+    transition: background 0.2s;
+}
+.button-primary:hover {
+    background: linear-gradient(90deg, #3ec6ff 0%, #2e8bff 100%);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+}
+th, td {
+    border: 1px solid #e0e6ed;
+    padding: 12px;
+    text-align: center;
+}
+th {
+    background: #f5f8fa;
+    color: #0a2a56;
+    font-weight: 600;
+}
+tr:nth-child(even) {
+    background: #f5f8fa;
+}
+select, input[type="number"] {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #e0e6ed;
+    margin-right: 8px;
+}
+.action-icons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+.icon-btn.delete {
+    color: #ff4d4f;
+}
+.icon-btn.edit {
+    color: #2e8bff;
+}
+.icon-btn:hover {
+    background: #e0e6ed;
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 12px 4px;
+        max-width: 100%;
+    }
+    th, td {
+        padding: 8px;
+        font-size: 0.95em;
+    }
+    .button-primary {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+}
