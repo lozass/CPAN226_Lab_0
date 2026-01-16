@@ -2,29 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Course Grade Calculator</title>
+    <title>CPAN226 Grade Calculator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Products</h1>
-        <form action="/add" method="post" style="margin-bottom:24px;">
-            <button type="submit" class="button-primary" style="float:right;">CREATE NEW</button>
-            <label for="test">Item:</label>
-            <select name="test" id="test">
-                <option value="Lab 1">Lab 1</option>
-                <option value="Lab 2">Lab 2</option>
-                <option value="Lab 3">Lab 3</option>
-                <option value="Lab 4">Lab 4</option>
-                <option value="Lab 5">Lab 5</option>
-                <option value="Lab 6">Lab 6</option>
-                <option value="Midterm">Midterm</option>
-                <option value="Final">Final</option>
-                <option value="Project">Project</option>
-            </select>
-            <label for="score">Score:</label>
-            <input type="number" name="score" id="score" step="0.01" min="0" max="100" required>
-        </form>
+        <h1>CPAN226 Grade Calculator</h1>
+        <div class="input-box">
+            <form action="/add" method="post" style="margin-bottom:0; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                <label for="test">Item:</label>
+                <select name="test" id="test">
+                    <option value="Lab 1">Lab 1</option>
+                    <option value="Lab 2">Lab 2</option>
+                    <option value="Lab 3">Lab 3</option>
+                    <option value="Lab 4">Lab 4</option>
+                    <option value="Lab 5">Lab 5</option>
+                    <option value="Lab 6">Lab 6</option>
+                    <option value="Midterm">Midterm</option>
+                    <option value="Final">Final</option>
+                    <option value="Project">Project</option>
+                </select>
+                <label for="score">Score:</label>
+                <input type="number" name="score" id="score" step="0.01" min="0" max="100" required>
+                <button type="submit" class="button-primary">Add</button>
+            </form>
+        </div>
         <table>
             <tr>
                 <th>Item Name</th>
